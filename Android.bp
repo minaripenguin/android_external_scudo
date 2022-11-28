@@ -172,6 +172,9 @@ cc_library_static {
 cc_library_static {
     name: "libscudo_for_testing",
     defaults: ["libscudo_defaults"],
+    cflags: [
+        "-DSCUDO_DEBUG",
+    ],
 }
 
 cc_test {
@@ -209,6 +212,7 @@ cc_test {
     cflags: [
         "-Wno-unused-parameter",
         "-fno-emulated-tls",
+        "-DSCUDO_DEBUG",
     ],
     target: {
         bionic: {
